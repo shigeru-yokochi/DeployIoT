@@ -222,6 +222,7 @@ int main(int argc, char **argv) {
 		infinitePublishFlag = false;
 	}
 
+/*
 	while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)
 		  && (publishCount > 0 || infinitePublishFlag)) {
 
@@ -256,7 +257,7 @@ int main(int argc, char **argv) {
 			publishCount--;
 		}
 	}
-
+*/
 	// Wait for all the messages to be received
 	aws_iot_mqtt_yield(&client, 100);
 
