@@ -7,7 +7,7 @@ iot = boto3.client('iot-data')
 def lambda_handler(event, context):
     topic = 'sdkTest/sub'
     payload = {
-        "message": "Lambda deploy test7"
+        "message": "Lambda deploy test8"
     }
     try:
         iot.publish(
