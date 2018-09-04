@@ -41,7 +41,7 @@
 /**
  * @brief Default cert location
  */
-char certDirectory[PATH_MAX + 1] = "~/aws-iot-device-sdk-embedded-C/certs";
+char certDirectory[PATH_MAX + 1] = "../aws-iot-device-sdk-embedded-C/certs";
 
 /**
  * @brief Default MQTT HOST URL is pulled from the aws_iot_config.h
