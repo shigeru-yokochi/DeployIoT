@@ -5,9 +5,12 @@ print('Loading function')
 iot = boto3.client('iot-data')
 
 def lambda_handler(event, context):
+    if event['body']['ref'] != "refs/heads/master":
+        return "Not master."
+        
     topic = 'sdkTest/sub'
     payload = {
-        "message": "Lambda deploy test8"
+        "message": "Lambda test"
     }
     try:
         iot.publish(
@@ -21,3 +24,4 @@ def lambda_handler(event, context):
     except Exception as e:
         print(e)
         return "Failed."
+        
