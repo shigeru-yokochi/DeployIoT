@@ -41,7 +41,7 @@
 /**
  * @brief Default cert location
  */
-char certDirectory[PATH_MAX + 1] = "~/aws-iot-device-sdk-embedded-C/certs";
+char certDirectory[PATH_MAX + 1] = "../aws-iot-device-sdk-embedded-C/certs";
 
 /**
  * @brief Default MQTT HOST URL is pulled from the aws_iot_config.h
@@ -151,14 +151,10 @@ int main(int argc, char **argv) {
 
 	IOT_INFO("\nAWS IoT SDK Version %d.%d.%d-%s\n", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
 
-//	getcwd(CurrentWD, sizeof(CurrentWD));
-//	snprintf(rootCA, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_ROOT_CA_FILENAME);
-//	snprintf(clientCRT, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_CERTIFICATE_FILENAME);
-//	snprintf(clientKey, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_PRIVATE_KEY_FILENAME);
-
-	snprintf(rootCA, PATH_MAX + 1, "%s/%s",  certDirectory, AWS_IOT_ROOT_CA_FILENAME);
-	snprintf(clientCRT, PATH_MAX + 1, "%s/%s", certDirectory, AWS_IOT_CERTIFICATE_FILENAME);
-	snprintf(clientKey, PATH_MAX + 1, "%s/%s", certDirectory, AWS_IOT_PRIVATE_KEY_FILENAME);
+	getcwd(CurrentWD, sizeof(CurrentWD));
+	snprintf(rootCA, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_ROOT_CA_FILENAME);
+	snprintf(clientCRT, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_CERTIFICATE_FILENAME);
+	snprintf(clientKey, PATH_MAX + 1, "%s/%s/%s", CurrentWD, certDirectory, AWS_IOT_PRIVATE_KEY_FILENAME);
 
 	IOT_DEBUG("rootCA %s", rootCA);
 	IOT_DEBUG("clientCRT %s", clientCRT);
