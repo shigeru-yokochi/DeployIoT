@@ -222,7 +222,6 @@ int main(int argc, char **argv) {
 		infinitePublishFlag = false;
 	}
 
-/*
 	while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)
 		  && (publishCount > 0 || infinitePublishFlag)) {
 
@@ -235,29 +234,28 @@ int main(int argc, char **argv) {
 
 		IOT_INFO("-->sleep");
 		sleep(1);
-		sprintf(cPayload, "%s : %d ", "hello from SDK QOS0", i++);
-		paramsQOS0.payloadLen = strlen(cPayload);
-		rc = aws_iot_mqtt_publish(&client, "sdkTest/sub", 11, &paramsQOS0);
-		if(publishCount > 0) {
-			publishCount--;
-		}
+//		sprintf(cPayload, "%s : %d ", "hello from SDK QOS0", i++);
+//		paramsQOS0.payloadLen = strlen(cPayload);
+//		rc = aws_iot_mqtt_publish(&client, "sdkTest/sub", 11, &paramsQOS0);
+//		if(publishCount > 0) {
+//			publishCount--;
+//		}
 
-		if(publishCount == 0 && !infinitePublishFlag) {
-			break;
-		}
+//		if(publishCount == 0 && !infinitePublishFlag) {
+//			break;
+//		}
 
-		sprintf(cPayload, "%s : %d ", "hello from SDK QOS1", i++);
-		paramsQOS1.payloadLen = strlen(cPayload);
-		rc = aws_iot_mqtt_publish(&client, "sdkTest/sub", 11, &paramsQOS1);
-		if (rc == MQTT_REQUEST_TIMEOUT_ERROR) {
-			IOT_WARN("QOS1 publish ack not received.\n");
-			rc = SUCCESS;
-		}
-		if(publishCount > 0) {
-			publishCount--;
-		}
+//		sprintf(cPayload, "%s : %d ", "hello from SDK QOS1", i++);
+//		paramsQOS1.payloadLen = strlen(cPayload);
+//		rc = aws_iot_mqtt_publish(&client, "sdkTest/sub", 11, &paramsQOS1);
+//		if (rc == MQTT_REQUEST_TIMEOUT_ERROR) {
+//			IOT_WARN("QOS1 publish ack not received.\n");
+//			rc = SUCCESS;
+//		}
+//		if(publishCount > 0) {
+//			publishCount--;
+//		}
 	}
-*/
 	// Wait for all the messages to be received
 	aws_iot_mqtt_yield(&client, 100);
 
