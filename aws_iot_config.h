@@ -30,6 +30,7 @@
 #define AWS_IOT_ROOT_CA_FILENAME       "root-CA.crt" ///< Root CA file name
 #define AWS_IOT_CERTIFICATE_FILENAME   "raspberrypi-zero-205.cert.pem" ///< device signed certificate file name
 #define AWS_IOT_PRIVATE_KEY_FILENAME   "raspberrypi-zero-205.private.key" ///< Device private key filename
+#define CERT_DIRECTORY	                "../aws-iot-device-sdk-embedded-C/certs"	//Relative path from the current directory
 // =================================================
 
 // MQTT PubSub
