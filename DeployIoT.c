@@ -64,7 +64,7 @@ void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, ui
 	IOT_UNUSED(pClient);
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
-	system("bash ./deploy.sh");
+	system("deploy.sh");
 }
 
 void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
