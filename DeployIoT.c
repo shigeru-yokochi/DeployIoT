@@ -223,7 +223,7 @@ int main(int argc, char **argv) {
 		infinitePublishFlag = false;
 	}
 
-	printf("--- DeployIoT started.\n ")
+	printf("--- DeployIoT started.\n ");
 
 	while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)
 		  && (publishCount > 0 || infinitePublishFlag)) {
