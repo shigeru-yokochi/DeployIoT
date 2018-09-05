@@ -1,5 +1,5 @@
 cd /root/DeployIoT
-git pull
+git pull >> /tmp/DeployIoT.log
 echo `pwd` >> /tmp/DeployIoT.log
-make
+make >> /tmp/DeployIoT.log
 #reboot
