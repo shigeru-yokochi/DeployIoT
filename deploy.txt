@@ -1,0 +1,4 @@
+cd /root/DeployIoT
+git pull >> ./DeployIoT.log
+make >> ./DeployIoT.log
+#reboot
