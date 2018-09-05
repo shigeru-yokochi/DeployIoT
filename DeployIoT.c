@@ -38,6 +38,7 @@
 #include "aws_iot_mqtt_client_interface.h"
 
 #define HOST_ADDRESS_SIZE 255
+#define DEPLOY_CONFIG_FILE "./deploy.txt"
 /**
  * @brief Default cert location
  */
@@ -58,15 +59,31 @@ uint32_t port = AWS_IOT_MQTT_PORT;
  */
 uint32_t publishCount = 0;
 
+
+void Deploy()
+{
+	char buf[1024];
+	FILE *fp;
+	if ((fp = fopen(DEPLOY_CONFIG_FILE, "r")) == NULL) return;
+
+	for(;;){
+		if(fgets(buf, 1024, fp) == NULL)break;
+		system(buf);
+	}
+	fclose(fp);
+}
+
+
 void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, uint16_t topicNameLen,
 									IoT_Publish_Message_Params *params, void *pData) {
 	IOT_UNUSED(pData);
 	IOT_UNUSED(pClient);
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
-	system("git pull >> ./DeployIoT.log");
-	system("make >> ./DeployIoT.log");
-	system("reboot");
+	Deploy();
+//	system("git pull >> ./DeployIoT.log");
+//	system("make >> ./DeployIoT.log");
+//	system("reboot");
 }
 
 void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
