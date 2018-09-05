@@ -65,7 +65,7 @@ void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, ui
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
 	system("git pull");
-	IOT_INFO("git pull");
+	IOT_INFO("git pull test1");
 }
 
 void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
