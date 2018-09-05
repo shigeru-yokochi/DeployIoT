@@ -209,7 +209,7 @@ int main(int argc, char **argv) {
 		return rc;
 	}
 
-	IOT_INFO("Subscribing... test4");
+	IOT_INFO("Subscribing... test5");
 	rc = aws_iot_mqtt_subscribe(&client, "sdkTest/sub", 11, QOS0, iot_subscribe_callback_handler, NULL);
 	if(SUCCESS != rc) {
 		IOT_ERROR("Error subscribing : %d ", rc);
