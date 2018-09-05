@@ -64,8 +64,14 @@ void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, ui
 	IOT_UNUSED(pClient);
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
+	IOT_INFO("--- git pull");
 	system("git pull");
-	IOT_INFO("git pull test2");
+	IOT_INFO("--- make");
+	system("make");
+	IOT_INFO("--- reboot");
+	system("reboot");
+
+
 }
 
 void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
@@ -203,7 +209,7 @@ int main(int argc, char **argv) {
 		return rc;
 	}
 
-	IOT_INFO("Subscribing...");
+	IOT_INFO("Subscribing... 1");
 	rc = aws_iot_mqtt_subscribe(&client, "sdkTest/sub", 11, QOS0, iot_subscribe_callback_handler, NULL);
 	if(SUCCESS != rc) {
 		IOT_ERROR("Error subscribing : %d ", rc);
