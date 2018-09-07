@@ -1,4 +1,4 @@
-# 概要
+# 利用イメージ
 
 
 ![image](https://user-images.githubusercontent.com/12773136/45201856-e07c5400-b2b1-11e8-9e1c-a6eeca8dd0ac.png)
@@ -59,4 +59,12 @@ cd /root/xxxxxx
 git pull
 make
 reboot
+```
+
+# 参考
+
+利用イメージ内のAWS Lambda functionコードも含んでいます
+
+```
+lambda_function.lambda_handler.py
 ```
