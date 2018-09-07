@@ -1,8 +1,10 @@
+# 初期設定
+
 ## AWS IoTへの接続設定
 
 カレントディレクトリにlocal_define.hを作成して内容を定義する
 
-```c:local_define.h
+```c
 #define AWS_IOT_MQTT_HOST              "xxxxxx.iot.ap-northeast-1.amazonaws.com"	//AWS IoTのエンドポイント
 #define AWS_IOT_MQTT_CLIENT_ID         "raspberrypi-zero-205"						//クライアントID(AWS_IOT_MY_THING_NAMEと同じ)
 #define AWS_IOT_MY_THING_NAME 	       "raspberrypi-zero-205"						//AWS IoTへ登録したThings名
@@ -17,7 +19,19 @@
 
 /etc/rc.local に以下を設定　
 
-```
+```sh
 su -c "bash /root/DeployIoT/AutoStart.sh &"
 ```
 
+# デプロイ設定
+
+カレントディレクトリに存在しているdeploy.txt内容を定義する
+
+例：/root/xxxxxxにcloneされているGitHubレポジトリをpullしたあとmakeとrebootを実行する
+
+```txt
+cd /root/xxxxxx
+git pull
+make
+reboot
+```
