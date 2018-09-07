@@ -30,7 +30,8 @@ cd DeployIoT
 #define AWS_IOT_ROOT_CA_FILENAME       "root-CA.crt"								//ルート証明書ファイル名
 #define AWS_IOT_CERTIFICATE_FILENAME   "raspberrypi-zero-205.cert.pem"				//デバイス証明書ファイル名
 #define AWS_IOT_PRIVATE_KEY_FILENAME   "raspberrypi-zero-205.private.key"			//プライベートキーファイル名
-#define CERT_DIRECTORY	               "../aws-iot-device-sdk-embedded-C/certs"		//aws-iot-device-sdk-embedded-C/certsへの相対パス"	//Relative path from the current directory
+#define CERT_DIRECTORY	               "../aws-iot-device-sdk-embedded-C/certs"		//aws-iot-device-sdk-embedded-C/certsへの相対パス"
+#define MQTT_TOPIC                     "sdkTest/sub"                                //MQTTトピックス名
 ```
 
 
