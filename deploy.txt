@@ -3,4 +3,4 @@ git pull >> ./DeployIoT.log
 make >> ./DeployIoT.log
 echo --- Deployment is completed. >> ./DeployIoT.log
 echo --- rebooting....... >> ./DeployIoT.log
-#reboot
+reboot
