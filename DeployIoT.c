@@ -6,7 +6,6 @@
 #include <string.h>
 
 #include "aws_iot_config.h"
-#include "local_define.h"
 #include "aws_iot_log.h"
 #include "aws_iot_version.h"
 #include "aws_iot_mqtt_client_interface.h"

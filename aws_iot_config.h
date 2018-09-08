@@ -3,6 +3,7 @@
 
 // Get from console
 // =================================================
+#include local_define.h
 #define AWS_IOT_MQTT_PORT              443 ///< default port for MQTT/S
 // =================================================
 
