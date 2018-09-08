@@ -9,19 +9,19 @@
 
 ## 前提
 
-前提として、AWS IoT Embedded C SDK のランタイム環境を構築が完了していること
-https://docs.aws.amazon.com/ja_jp/iot/latest/developerguide/iot-embedded-c-sdk.html
-このsdkを/root配下にインストールします
+- 前提として、AWS IoT Embedded C SDK のランタイム環境を構築が完了していること
+- https://docs.aws.amazon.com/ja_jp/iot/latest/developerguide/iot-embedded-c-sdk.html
+- このsdkを/root配下にインストールします
 
 例：
-cd /root
-git clone https://github.com/aws/aws-iot-device-sdk-embedded-C.git -b release
+- cd /root
+- git clone https://github.com/aws/aws-iot-device-sdk-embedded-C.git -b release
 
 ## DeployIoTインストール
 
-cd /root
-git clone https://github.com/shigeru-yokochi/DeployIoT.git
-cd DeployIoT
+- cd /root
+- git clone https://github.com/shigeru-yokochi/DeployIoT.git
+- cd DeployIoT
 
 
 ## AWS IoTへの接続設定
