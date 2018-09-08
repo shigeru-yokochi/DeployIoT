@@ -197,6 +197,7 @@ int main(int argc, char **argv) {
 		IOT_ERROR("Error subscribing : %d ", rc);
 		return rc;
 	}
+	printf("--- MQTT_TOPIC[%s] len:%d\n "MQTT_TOPIC,strlen(MQTT_TOPIC));
 
 	sprintf(cPayload, "%s : %d ", "hello from SDK", i);
 
