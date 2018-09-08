@@ -23,10 +23,7 @@
 - git clone https://github.com/shigeru-yokochi/DeployIoT.git
 - cd DeployIoT
 
-
-## AWS IoTへの接続設定
-
-/root/DeployIoT にlocal_define.hを作成して内容を定義する
+- /root/DeployIoT に新規ファイルlocal_define.hを作成して内容を定義する
 
 ```c
 #define AWS_IOT_MQTT_HOST              "xxxxxx.iot.ap-northeast-1.amazonaws.com"	//AWS IoTのエンドポイント
@@ -38,17 +35,10 @@
 #define CERT_DIRECTORY	               "../aws-iot-device-sdk-embedded-C/certs"		//aws-iot-device-sdk-embedded-C/certsへの相対パス"
 #define MQTT_TOPIC                     "sdkTest/sub"                                //MQTTトピックス名
 ```
+- make を実行してエラーがなければOK
 
 
-## power on時に起動させる設定
-
-/etc/rc.local に以下を設定　
-
-```sh
-su -c "bash /root/DeployIoT/AutoStart.sh &"
-```
-
-# デプロイ設定
+## デプロイ設定
 
 カレントディレクトリに存在しているdeploy.txt内容を定義する
 
@@ -60,6 +50,15 @@ git pull
 make
 reboot
 ```
+
+## power on時に起動させる設定
+
+/etc/rc.local に以下を設定　
+
+```sh
+su -c "bash /root/DeployIoT/AutoStart.sh &"
+```
+
 
 # 参考
 
