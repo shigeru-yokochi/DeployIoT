@@ -27,13 +27,13 @@
 
 ```c
 #define AWS_IOT_MQTT_HOST              "xxxxxx.iot.ap-northeast-1.amazonaws.com"	//AWS IoTのエンドポイント
-#define AWS_IOT_MQTT_CLIENT_ID         "raspberrypi-zero-205"						//クライアントID(AWS_IOT_MY_THING_NAMEと同じ)
-#define AWS_IOT_MY_THING_NAME 	       "raspberrypi-zero-205"						//AWS IoTへ登録したThings名
+#define AWS_IOT_MQTT_CLIENT_ID         "xxxxxxx"						//クライアントID(AWS_IOT_MY_THING_NAMEと同じ)
+#define AWS_IOT_MY_THING_NAME 	       "xxxxxxx"						//AWS IoTへ登録したThings名
 #define AWS_IOT_ROOT_CA_FILENAME       "root-CA.crt"								//ルート証明書ファイル名
-#define AWS_IOT_CERTIFICATE_FILENAME   "raspberrypi-zero-205.cert.pem"				//デバイス証明書ファイル名
-#define AWS_IOT_PRIVATE_KEY_FILENAME   "raspberrypi-zero-205.private.key"			//プライベートキーファイル名
+#define AWS_IOT_CERTIFICATE_FILENAME   "xxxxxxx.cert.pem"				//デバイス証明書ファイル名
+#define AWS_IOT_PRIVATE_KEY_FILENAME   "xxxxxxx.private.key"			//プライベートキーファイル名
 #define CERT_DIRECTORY	               "../aws-iot-device-sdk-embedded-C/certs"		//aws-iot-device-sdk-embedded-C/certsへの相対パス"
-#define MQTT_TOPIC                     "sdkTest/sub"                                //MQTTトピックス名
+#define MQTT_TOPIC                     "xxxxx/xxx"                                //MQTTトピックス名
 ```
 - make を実行してエラーがなければOK
 
